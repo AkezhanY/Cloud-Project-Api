@@ -4,22 +4,16 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header('Content-Type: application/json');
 
-// Остальной код...
+$data = [
+    ["department" => "Marketing", "sales" => 15000],
+    ["department" => "Sales", "sales" => 22000],
+    ["department" => "IT", "sales" => 18000],
+    ["department" => "Support", "sales" => 9000],
+    ["department" => "HR", "sales" => 12000],
+    ["department" => "Finance", "sales" => 16000],
+    ["department" => "Legal", "sales" => 8000],
+    ["department" => "Operations", "sales" => 11000]
+];
+
+echo json_encode($data);
 ?>
-CREATE TABLE department_sales (
-    id SERIAL PRIMARY KEY,
-    department VARCHAR(50),
-    sales INTEGER
-);
-
--- Inserting data into department_sales
-INSERT INTO department_sales (department, sales) VALUES
-('Marketing', 15000),
-('Sales', 22000),
-('IT', 18000),
-('Support', 9000),
-('HR', 12000),
-('Finance', 16000),
-('Legal', 8000),
-
-('Operations', 11000);
