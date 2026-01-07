@@ -125,7 +125,7 @@ $lastUpdate = date("d M Y, H:i");
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Enterprise Analytics Dashboard - Akezhan Yergali 66836</title>
+<title>Analytics Dashboard - Akezhan Yergali 66836</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <style>
@@ -191,9 +191,9 @@ footer{
 
 <!-- ЗАГОЛОВОК -->
 <div class="text-center mb-4">
-<h2><b>Enterprise Analytics Dashboard</b></h2>
+<h2><b> Analytics Dashboard</b></h2>
 <p class="text-muted">
-<b>PHP • PostgreSQL • Render.com • Plotly API • NBP API</b><br>
+<b></b><br>
 Last updated: <?=$lastUpdate?> | <span class="api-status <?=($departmentData ? 'api-online' : 'api-offline')?>">API: <?=($departmentData ? 'ONLINE' : 'OFFLINE')?></span>
 </p>
 </div>
@@ -202,30 +202,30 @@ Last updated: <?=$lastUpdate?> | <span class="api-status <?=($departmentData ? '
 <div class="row g-4 mb-5">
 <div class="col-lg-3">
 <div class="card p-3 text-center shadow-sm">
-<small><b>Total Sales</b></small>
-<h4><b><?=number_format($totalSales)?> PLN</b></h4>
+<small><b></b></small>
+<h4><b><?=number_format($totalSales)?> </b></h4>
 <small><b><?=($salesDelta>=0?'+':'')?><?=$salesDelta?></b></small>
 </div>
 </div>
 <div class="col-lg-3">
 <div class="card p-3 text-center shadow-sm">
-<small><b>Total Users (Today)</b></small>
+<small><b></b></small>
 <h4><b><?=number_format($totalUsers)?></b></h4>
-<small><b>Peak: <?=$topHour?></b></small>
+<small><b> <?=$topHour?></b></small>
 </div>
 </div>
 <div class="col-lg-3">
 <div class="card p-3 text-center shadow-sm">
-<small><b>Budget Categories</b></small>
+<small><b></b></small>
 <h4><b><?=count($budgetLabels)?></b></h4>
-<small><b>Largest: <?=$topBudget?></b></small>
+<small><b> <?=$topBudget?></b></small>
 </div>
 </div>
 <div class="col-lg-3">
 <div class="card p-3 text-center shadow-sm">
-<small><b>Client Types</b></small>
+<small><b></b></small>
 <h4><b><?=count($clientLabels)?></b></h4>
-<small><b>Most: <?=$topClient?></b></small>
+<small><b><?=$topClient?></b></small>
 </div>
 </div>
 </div>
@@ -317,7 +317,7 @@ Last updated: <?=$lastUpdate?> | <span class="api-status <?=($departmentData ? '
 <!-- ПОДВАЛ -->
 <footer class="text-center py-4">
 <div class="fw-semibold mb-2">Akezhan Yergali 66836</div>
-<div class="text-muted">Enterprise Analytics Dashboard - Final Project</div>
+<div class="text-muted">Analytics Dashboard - Final Project</div>
 </footer>
 
 <!-- МОДАЛЬНЫЕ ОКНА ДЛЯ ТАБЛИЦ -->
@@ -583,18 +583,7 @@ function drawCharts() {
     }
 }
 
-/* ===================== ТЕМА ===================== */
-function toggleTheme() {
-    const dark = document.body.classList.toggle('dark');
-    localStorage.setItem('theme', dark ? 'dark' : 'light');
-    document.getElementById('themeBtn').innerText = dark ? '☀️ Light' : '🌙 Dark';
-    drawCharts();
-}
 
-if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark');
-    document.getElementById('themeBtn').innerText = '☀️ Light';
-}
 
 /* ===================== ДОПОЛНИТЕЛЬНЫЕ ФУНКЦИИ ===================== */
 function openDoc() {
@@ -615,3 +604,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
