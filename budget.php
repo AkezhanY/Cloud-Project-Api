@@ -4,22 +4,25 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header('Content-Type: application/json');
 
-// Остальной код...
+$data = [
+    ["category" => "Salaries", "percent" => 40],
+    ["category" => "Advertising", "percent" => 20],
+    ["category" => "Development", "percent" => 25],
+    ["category" => "Office", "percent" => 15],
+    ["category" => "Training", "percent" => 5],
+    ["category" => "R&D", "percent" => 10],
+    ["category" => "IT infrastructure", "percent" => 8],
+    ["category" => "Maintenance", "percent" => 12]
+];
+
+// Проверяем что сумма = 100
+$sum = array_sum(array_column($data, 'percent'));
+if ($sum !== 100) {
+    // Нормализуем
+    foreach ($data as &$item) {
+        $item['percent'] = round(($item['percent'] / $sum) * 100);
+    }
+}
+
+echo json_encode($data);
 ?>
-CREATE TABLE budget (
-    id SERIAL PRIMARY KEY,
-    category VARCHAR(50),
-    percent INTEGER
-);
-
--- Inserting data into budget
-INSERT INTO budget (category, percent) VALUES
-('Salaries', 40),
-('Advertising', 20),
-('Development', 25),
-('Office', 15),
-('Training', 5),
-('R&D', 10),
-('IT infrastructure', 8),
-
-('Maintenance', 12);
