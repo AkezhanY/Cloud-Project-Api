@@ -1,3 +1,11 @@
+<?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+header('Content-Type: application/json');
+
+// Остальной код...
+?>
 CREATE TABLE department_sales (
     id SERIAL PRIMARY KEY,
     department VARCHAR(50),
@@ -13,4 +21,5 @@ INSERT INTO department_sales (department, sales) VALUES
 ('HR', 12000),
 ('Finance', 16000),
 ('Legal', 8000),
+
 ('Operations', 11000);
