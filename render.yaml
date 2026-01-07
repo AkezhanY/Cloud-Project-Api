@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: analytics-api-66836
+    runtime: php
+    repo: https://github.com/AkezhanY/Cloud-Project-Api
+    branch: main
+    buildCommand: ""
+    startCommand: php -S 0.0.0.0:$PORT
+    envVars:
+      - key: NODE_ENV
+        value: production
