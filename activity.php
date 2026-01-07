@@ -1,3 +1,12 @@
+
+<?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+header('Content-Type: application/json');
+
+// Остальной код...
+?>
 CREATE TABLE hourly_activity (
     id SERIAL PRIMARY KEY,
     hour INTEGER,
@@ -8,4 +17,5 @@ CREATE TABLE hourly_activity (
 INSERT INTO hourly_activity (hour, users) VALUES
 (9, 120), (10, 250), (11, 310), (12, 280),
 (13, 200), (14, 270), (15, 320), (16, 300),
+
 (17, 350), (18, 400), (19, 450), (20, 500);
