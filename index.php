@@ -22,7 +22,7 @@ function getRates($currency) {
 }
 
 /* ===================== ТВОИ API URL ===================== */
-$BASE = "https://cloud-project-api-3.onrender.com";
+$BASE = "https://cloud-project-api-6.onrender.com";
 
 /* ===================== FETCH ТВОИХ API ===================== */
 $departmentData = fetchApi("$BASE/department.php");
@@ -183,7 +183,7 @@ footer{
 
 <!-- КНОПКИ УПРАВЛЕНИЯ -->
 <div class="position-fixed end-0 m-3 d-flex flex-column gap-2">
-  <button id="themeBtn" class="btn btn-sm btn-outline-secondary" onclick="toggleTheme()">🌙 Dark</button>
+  <button id="themeBtn" class="btn btn-sm btn-outline-secondary" onclick="toggleTheme()"></button>
   <button class="btn btn-sm btn-outline-primary" onclick="openDoc()">📘 Description</button>
 </div>
 
@@ -604,4 +604,5 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
 
