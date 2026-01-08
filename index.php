@@ -35,7 +35,6 @@ $usd = getRates("usd");
 $chf = getRates("chf");
 
 /* ===================== ПОДГОТОВКА ДАННЫХ ===================== */
-// Если API не работают, используем демо-данные
 if (!$departmentData) {
     $departmentData = [
         ["department" => "Marketing", "sales" => 15000],
@@ -199,36 +198,7 @@ Last updated: <?=$lastUpdate?> | <span class="api-status <?=($departmentData ? '
 </div>
 
 <!-- KPI КАРТОЧКИ -->
-<div class="row g-4 mb-5">
-<div class="col-lg-3">
-<div class="card p-3 text-center shadow-sm">
-<small><b></b></small>
-<h4><b><?=number_format($totalSales)?> </b></h4>
-<small><b><?=($salesDelta>=0?'+':'')?><?=$salesDelta?></b></small>
-</div>
-</div>
-<div class="col-lg-3">
-<div class="card p-3 text-center shadow-sm">
-<small><b></b></small>
-<h4><b><?=number_format($totalUsers)?></b></h4>
-<small><b> <?=$topHour?></b></small>
-</div>
-</div>
-<div class="col-lg-3">
-<div class="card p-3 text-center shadow-sm">
-<small><b></b></small>
-<h4><b><?=count($budgetLabels)?></b></h4>
-<small><b> <?=$topBudget?></b></small>
-</div>
-</div>
-<div class="col-lg-3">
-<div class="card p-3 text-center shadow-sm">
-<small><b></b></small>
-<h4><b><?=count($clientLabels)?></b></h4>
-<small><b><?=$topClient?></b></small>
-</div>
-</div>
-</div>
+
 
 <!-- 6 ГРАФИКОВ -->
 <div class="row g-4">
@@ -604,5 +574,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
 
 
